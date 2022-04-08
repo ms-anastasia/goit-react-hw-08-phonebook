@@ -4,7 +4,6 @@ export const ContentBox = styled.div`
   position: relative;
   max-width: 396px;
   margin: 20px auto;
-
 `;
 
 export const List = styled.ul`

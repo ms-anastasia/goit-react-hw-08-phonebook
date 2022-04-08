@@ -25,31 +25,25 @@ export const register = createAsyncThunk(
   }
 );
 
-export const logIn = createAsyncThunk(
-  "/auth/login",
-  async (credentials) => {
-    try {
-      const data = await API.loginUser(credentials);
-      token.set(data.token);
-      return data;
-    } catch (error) {
-      toast.error("Oops, something went wrong. Please try again");
-    }
+export const logIn = createAsyncThunk("/auth/login", async (credentials) => {
+  try {
+    const data = await API.loginUser(credentials);
+    token.set(data.token);
+    return data;
+  } catch (error) {
+    toast.error("Oops, something went wrong. Please try again");
   }
-);
+});
 
-export const logOut = createAsyncThunk(
-  "/auth/logout",
-  async (_) => {
-    try {
-      const data = await API.logoutUser();
-      token.unset();
-      return data;
-    } catch (error) {
-      toast.error("Oops, something went wrong. Please try again");
-    }
+export const logOut = createAsyncThunk("/auth/logout", async (_) => {
+  try {
+    const data = await API.logoutUser();
+    token.unset();
+    return data;
+  } catch (error) {
+    toast.error("Oops, something went wrong. Please try again");
   }
-);
+});
 
 export const refreshCurrentUser = createAsyncThunk(
   "auth/refresh",

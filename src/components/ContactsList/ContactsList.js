@@ -1,12 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {
-  ContentBox,
-  List,
-  ListItem,
-  Name,
-  Number,
-} from "./Contacts.styled";
+import { ContentBox, List, ListItem, Name, Number } from "./Contacts.styled";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { fetchContacts, deleteContact } from "../../redux/contacts/operations";
