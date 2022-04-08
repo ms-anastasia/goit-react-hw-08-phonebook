@@ -8,9 +8,8 @@ export const FilterContainer = styled.div`
   margin-right: 10px;
 `;
 
-
 export const FilterContent = styled.div`
-position: relative;
+  position: relative;
   width: 250px;
   background-color: rgba(255, 255, 255, 0.9);
   border: 1px solid rgba(0, 0, 0, 0.12);

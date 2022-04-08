@@ -7,7 +7,7 @@ export default function ContactsView() {
     <>
       <Filter />
       <Form />
-      <ContactsList/>
+      <ContactsList />
     </>
   );
 }

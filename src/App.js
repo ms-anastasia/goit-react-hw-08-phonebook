@@ -1,7 +1,9 @@
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { lazy, Suspense, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Container from "./components/Container/Container";
-import AppBar from './components/AppBar';
+import AppBar from "./components/AppBar";
 import { refreshCurrentUser } from "./redux/authorization/auth-operations";
 import { getIsFetchingCurrent } from "./redux/authorization/auth-selectors";
 import PrivateRoute from "./routers/PrivateRouter";
@@ -26,8 +28,8 @@ const App = () => {
       {isFetchingCurrentUser ? (
         <h1>Hi</h1>
       ) : (
-          <>
-            <AppBar />
+        <>
+          <AppBar />
           <Suspense fallback={<div>Loading</div>}>
             <Routes>
               <Route index element={<HomeView />}></Route>
@@ -60,6 +62,7 @@ const App = () => {
           </Suspense>
         </>
       )}
+      <ToastContainer autoClose={4000} />
     </Container>
   );
 };

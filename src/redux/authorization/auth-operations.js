@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import * as API from "../../services/api";
 import axios from "axios";
@@ -13,39 +14,39 @@ const token = {
 
 export const register = createAsyncThunk(
   "auth/register",
-  async (credentials, { rejectWithValue }) => {
+  async (credentials) => {
     try {
-      const { data } = await API.signupUser(credentials);
+      const data = await API.signupUser(credentials);
       token.set(data.token);
       return data;
     } catch (error) {
-      return rejectWithValue(error);
+      toast.error("Oops, something went wrong. Please try again");
     }
   }
 );
 
 export const logIn = createAsyncThunk(
   "/auth/login",
-  async (credentials, { rejectWithValue }) => {
+  async (credentials) => {
     try {
       const data = await API.loginUser(credentials);
       token.set(data.token);
       return data;
     } catch (error) {
-      return rejectWithValue(error);
+      toast.error("Oops, something went wrong. Please try again");
     }
   }
 );
 
 export const logOut = createAsyncThunk(
   "/auth/logout",
-  async (_, { rejectWithValue }) => {
+  async (_) => {
     try {
       const data = await API.logoutUser();
       token.unset();
       return data;
     } catch (error) {
-      return rejectWithValue(error);
+      toast.error("Oops, something went wrong. Please try again");
     }
   }
 );

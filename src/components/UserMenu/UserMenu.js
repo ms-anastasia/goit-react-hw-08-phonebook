@@ -1,14 +1,14 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { getUsername } from '../../redux/authorization/auth-selectors';
-import { logOut } from '../../redux/authorization/auth-operations';
-import IconButton from '@mui/material/IconButton';
-import LogoutIcon from '@mui/icons-material/Logout';
-import defaultAvatar from './avatar.png';
+import { useDispatch, useSelector } from "react-redux";
+import { getUsername } from "../../redux/authorization/auth-selectors";
+import { logOut } from "../../redux/authorization/auth-operations";
+import IconButton from "@mui/material/IconButton";
+import LogoutIcon from "@mui/icons-material/Logout";
+import defaultAvatar from "./avatar.png";
 
 const styles = {
   container: {
-    display: 'flex',
-    alignItems: 'center',
+    display: "flex",
+    alignItems: "center",
   },
   avatar: {
     marginRight: 4,
@@ -31,7 +31,6 @@ export default function UserMenu() {
       <IconButton aria-label="logout" onClick={() => dispatch(logOut())}>
         <LogoutIcon />
       </IconButton>
- 
     </div>
   );
 }
