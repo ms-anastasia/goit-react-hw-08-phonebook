@@ -1,18 +1,20 @@
 import styled from "styled-components";
 
-export const FilterHeader = styled.label`
-  font-weight: bold;
-  font-size: 20px;
-  margin-bottom: 10px;
+export const FilterContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  padding-left: 20px;
-  margin-top: 15px;
+  justify-content: flex-end;
+  border-radius: 50px;
+  margin-top: 10px;
+  margin-right: 10px;
 `;
 
-export const FilterInput = styled.input`
-  height: 20px;
-  width: 300px;
-  margin-top: 15px;
-  border: 1px solid;
+
+export const FilterContent = styled.div`
+position: relative;
+  width: 250px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 `;

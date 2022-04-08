@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { getUsername } from '../../redux/authorization/auth-selectors';
 import { logOut } from '../../redux/authorization/auth-operations';
+import IconButton from '@mui/material/IconButton';
+import LogoutIcon from '@mui/icons-material/Logout';
 import defaultAvatar from './avatar.png';
 
 const styles = {
@@ -24,11 +26,12 @@ export default function UserMenu() {
 
   return (
     <div style={styles.container}>
-      <img src={avatar} alt="" width="32" style={styles.avatar} />
-      <span style={styles.name}>Добро пожаловать, {name}</span>
-      <button type="button" onClick={() => dispatch(logOut())}>
-        Выйти
-      </button>
+      <img src={avatar} alt="" width="50" style={styles.avatar} />
+      <span style={styles.name}>Welcome, {name}</span>
+      <IconButton aria-label="logout" onClick={() => dispatch(logOut())}>
+        <LogoutIcon />
+      </IconButton>
+ 
     </div>
   );
 }

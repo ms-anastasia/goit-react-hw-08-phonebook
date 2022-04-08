@@ -5,20 +5,10 @@ import { createReducer } from "@reduxjs/toolkit";
 
 const items = createReducer([], {
   [fetchContacts.fulfilled]: (_, { payload }) => payload,
-  [addContact.fulfilled]: (state, { payload }) => {
-    let includesName = false;
-    for (const item of state) {
-      if (payload.name === item.name) {
-        includesName = true;
-        alert(`${item.name} is already in your contacts.`);
-      }
-    }
-    if (!includesName) {
-      return [...state, payload];
-    }
-  },
-  [deleteContact.fulfilled]: (state, { payload }) =>
-    state.filter(({ id }) => id !== payload.id),
+  [addContact.fulfilled]: (state, { payload }) => [payload, ...state],
+
+  [deleteContact.fulfilled]: (state, { meta }) =>
+    state.filter(({ id }) => id !== meta.arg),
 });
 
 const filter = createReducer("", {

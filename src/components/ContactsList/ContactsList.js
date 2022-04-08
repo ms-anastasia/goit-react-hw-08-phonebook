@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { List, ListItem, Name, Number, DelButton } from "./Contacts.styled";
+import { ContentBox, List, ListItem, Name, Number, DelButton } from "./Contacts.styled";
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
 import { fetchContacts, deleteContact } from "../../redux/operations";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
@@ -13,15 +15,19 @@ const ContactsList = () => {
 
   useEffect(() => dispatch(fetchContacts()), [dispatch]);
   return (
+    <ContentBox>
     <List>
       {contacts.map(({ id, name, number }) => (
         <ListItem key={id}>
           <Name>{name}</Name>
           <Number>{number}</Number>
-          <DelButton onClick={() => onDeleteContact(id)}>Удалить</DelButton>
+          <IconButton aria-label="delete" onClick={() => onDeleteContact(id)}>
+        <DeleteIcon />
+      </IconButton>
         </ListItem>
       ))}
-    </List>
+      </List>
+      </ContentBox>
   );
 };
 

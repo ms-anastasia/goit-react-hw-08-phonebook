@@ -43,14 +43,20 @@ export default function RegistrationView() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="xs" >
         <CssBaseline />
         <Box
           sx={{
+            width: 410,
+ 
             marginTop: 8,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            backgroundColor: "rgba(255, 255, 255, 0.9)",
+            borderRadius: "5px",
+            padding: "0px 10px"
+            
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
