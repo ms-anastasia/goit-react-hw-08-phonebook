@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import img from "./background4.jpg";
+import img from "../../images/background4.jpg";
 
 export const ContainerBox = styled.div`
   margin: 0;

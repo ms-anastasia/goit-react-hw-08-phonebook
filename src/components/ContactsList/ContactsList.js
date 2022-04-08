@@ -6,14 +6,13 @@ import {
   ListItem,
   Name,
   Number,
-  DelButton,
 } from "./Contacts.styled";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { fetchContacts, deleteContact } from "../../redux/operations";
+import { fetchContacts, deleteContact } from "../../redux/contacts/operations";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import selectors from "../../redux/selectors";
+import selectors from "../../redux/contacts/selectors";
 
 const ContactsList = () => {
   const contacts = useSelector((state) => selectors.getVisibleContacts(state));

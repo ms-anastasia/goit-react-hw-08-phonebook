@@ -1,5 +1,5 @@
 import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
-import contactsReducer from "./reducer";
+import contactsReducer from "./contacts/reducer";
 import { logger } from "redux-logger";
 import authReducer from "./authorization/auth-slice";
 import {

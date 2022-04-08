@@ -3,7 +3,7 @@ import { getUsername } from "../../redux/authorization/auth-selectors";
 import { logOut } from "../../redux/authorization/auth-operations";
 import IconButton from "@mui/material/IconButton";
 import LogoutIcon from "@mui/icons-material/Logout";
-import defaultAvatar from "./avatar.png";
+import defaultAvatar from "../../images/avatar.png";
 
 const styles = {
   container: {

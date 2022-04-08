@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FilterContent, FilterContainer } from "./Filter.styled";
 import { useSelector, useDispatch } from "react-redux";
-import * as contactActions from "../../redux/actions";
-import selectors from "../../redux/selectors";
+import * as contactActions from "../../redux/contacts/actions";
+import selectors from "../../redux/contacts/selectors";
 import { TextField } from "@mui/material";
 
 const Filter = () => {

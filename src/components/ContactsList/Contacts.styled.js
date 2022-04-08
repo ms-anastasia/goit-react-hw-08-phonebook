@@ -46,7 +46,3 @@ export const Number = styled.span`
   text-align: start;
   display: inline-block;
 `;
-
-export const DelButton = styled.button`
-  cursor: pointer;
-`;
